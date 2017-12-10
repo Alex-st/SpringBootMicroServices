@@ -58,7 +58,7 @@ public class MainController {
      * @description Method to create new user
      * @httpMethod POST
      * @httpUrl http://{host}:{port}/client/user
-     * @httpUrlExample http://localhost:8081/client/user/1
+     * @httpUrlExample http://localhost:8081/client/user
      * @requestBodyExample {"id" : "4", "username" : "Maya007"}
      */
     @RequestMapping(value = "/user", method = RequestMethod.POST)

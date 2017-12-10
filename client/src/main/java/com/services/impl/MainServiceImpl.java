@@ -66,16 +66,17 @@ public class MainServiceImpl implements MainService {
     @Override
     public long saveUser(UserDto dto) {
 
-        URI uri = UriComponentsBuilder.fromUriString(URI_STRING + "/user")
-                .build()
-                .toUri();
+//        URI uri = UriComponentsBuilder.fromUriString(URI_STRING + "/user")
+//                .build()
+//                .toUri();
+//
+//        RestTemplate restTemplate = new RestTemplate();
+//
+//        UserDto result = restTemplate.postForObject(uri, dto, UserDto.class);
 
-        RestTemplate restTemplate = new RestTemplate();
+        Long userId = serverFeignClient.saveUser(dto);
+        log.info("User {} was successfully created", userId);
 
-        UserDto result = restTemplate.postForObject(uri, dto, UserDto.class);
-
-        log.info("User {} was successfully created", result.getUsername());
-
-        return result.getId();
+        return userId;
     }
 }

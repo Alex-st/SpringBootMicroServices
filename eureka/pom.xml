@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Spring Cloud Eureka</name>
+    <name>eureka</name>
     <description>Spring Cloud Eureka Server for service descovery</description>
 
     <artifactId>eureka</artifactId>
@@ -39,6 +39,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.name}</finalName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
